@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { EventType, VGG, VGGEvent } from '@verygoodgraphics/vgg-wasm';
 import VGGRender from '../lib/VGGRender.vue'
+// import VGGRender, { EventType, VGG, VGGEvent } from '@verygoodgraphics/vgg-wasm'
 
 function handleLoad(event: VGGEvent, instance: VGG<'#vgg_home'>) {
   console.log(event, instance)
@@ -8,7 +9,6 @@ function handleLoad(event: VGGEvent, instance: VGG<'#vgg_home'>) {
     window.alert('Hello, VGG!')
   })
 }
-
 </script>
 
 <template>

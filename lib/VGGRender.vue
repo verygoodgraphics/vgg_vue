@@ -23,10 +23,10 @@ export interface VGGEventProps<T extends string> {
   onSelect?: (event: VGGEvent) => Promise<void>
 }
 
+export { EventType, State }
+
 export type {
-  EventType,
   VGGEvent,
-  State,
   VGG,
 }
 
