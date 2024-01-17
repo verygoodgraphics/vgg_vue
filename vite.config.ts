@@ -7,23 +7,18 @@ import dts from "vite-plugin-dts"
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/VGGRender.vue"),
+      entry: resolve(__dirname, "lib/index.ts"),
       name: "vgg-vue",
       fileName: "vgg-vue",
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", "@verygoodgraphics/vgg-wasm"],
       output: {
         globals: {
           vue: "Vue",
         },
       },
     },
-    // rollupOptions: {
-    //   input: {
-    //     main: "!submodules/**/index.html",
-    //   },
-    // },
   },
   plugins: [vue(), dts({ rollupTypes: true })],
 })

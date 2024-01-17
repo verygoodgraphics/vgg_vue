@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { EventType, VGG, VGGEvent } from '@verygoodgraphics/vgg-wasm';
-import VGGRender from '../lib/VGGRender.vue'
+// import { EventType, VGG, VGGEvent } from '@verygoodgraphics/vgg-wasm';
+// import VGGRender from '../lib/VGGRender.vue'
 // import VGGRender, { EventType, VGG, VGGEvent } from '@verygoodgraphics/vgg-wasm'
+// @ts-expect-error
+import VGGRender, { EventType, VGG, VGGEvent } from '../dist/vgg-vue.js'
 
 function handleLoad(event: VGGEvent, instance: VGG<'#vgg_home'>) {
   console.log(event, instance)
-  instance?.$('#vgg_home').on(EventType.Click, async () => {
-    window.alert('Hello, VGG!')
+  // @ts-expect-error
+  instance?.$('#vgg_home').on(EventType.Click, async (_, { get, set }) => {
+    console.log(get, set)
   })
 }
 </script>
