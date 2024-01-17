@@ -23,12 +23,7 @@ export interface VGGEventProps<T extends string> {
   onSelect?: (event: VGGEvent) => Promise<void>
 }
 
-export { EventType, State }
 
-export type {
-  VGGEvent,
-  VGG,
-}
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
