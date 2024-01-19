@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: "vgg-vue",
     },
     rollupOptions: {
-      external: ["vue", "@verygoodgraphics/vgg-wasm"],
+      external: ["vue"],
       output: {
         globals: {
           vue: "Vue",

@@ -8,7 +8,8 @@ import VGGRender, { EventType, VGG, VGGEvent } from '../dist/vgg-vue.js'
 function handleLoad(event: VGGEvent, instance: VGG<'#vgg_home'>) {
   console.log(event, instance)
   // @ts-expect-error
-  instance?.$('#vgg_home').on(EventType.Click, async (_, { get, set }) => {
+  instance.$("#vgg-btn-get-started").on(EventType.Click, async (_, { get, set }) => {
+    window.alert("Hello World from VGGRender Component!")
     console.log(get, set)
   })
 }
